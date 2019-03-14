@@ -143,6 +143,7 @@ class SoundCloudService : public InternetService {
   static const int kSongSimpleSearchLimit;
   static const int kSearchDelayMsec;
 
+ public:
   static const char* kApiClientId;
   static const char* kApiClientSecret;
 };

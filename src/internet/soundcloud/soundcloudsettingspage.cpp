@@ -50,6 +50,8 @@ void SoundCloudSettingsPage::Load() {
 
 void SoundCloudSettingsPage::Save() {
   // Everything is done in the service: nothing to do here
+  SoundCloudService::kApiClientId = ui_->client_id->text().toStdString().c_str();
+  SoundCloudService::kApiClientSecret = ui_->client_secret->text().toStdString().c_str();
 }
 
 void SoundCloudSettingsPage::LoginClicked() {
@@ -74,4 +76,6 @@ void SoundCloudSettingsPage::LogoutClicked() {
 
 void SoundCloudSettingsPage::Connected() {
   ui_->login_state->SetLoggedIn(LoginStateWidget::LoggedIn);
+  ui_->client_id->setText(SoundCloudService::kApiClientId);
+  ui_->client_secret->setText(SoundCloudService::kApiClientSecret);
 }
